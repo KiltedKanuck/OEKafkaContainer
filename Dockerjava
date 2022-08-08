@@ -1,0 +1,5 @@
+FROM docker
+
+COPY ./java/consume.sh ./consume.sh
+COPY ./java/qa-kafka-client.jar ./qa-kafka-client.jar
+
