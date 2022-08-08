@@ -24,7 +24,7 @@ block-level on error undo, throw.
     pb = ProducerBuilder:Create("progress-kafka").
 
     //pb:SetProducerOption("bootstrap.servers", "vm-lxoedevkafkabroker1-3:5001"). // Kafka reqires at least one bootstrap server host and port.
-    pb:SetProducerOption("bootstrap.servers", "172.23.0.3:9092"). // Kafka reqires at least one bootstrap server host and port.
+    pb:SetProducerOption("bootstrap.servers", "localkafka:9092"). // Kafka reqires at least one bootstrap server host and port.
     pb:SetProducerOption("value.serializer", "OpenEdge.Messaging.StringSerializer").
 
     producer = pb:Build().
