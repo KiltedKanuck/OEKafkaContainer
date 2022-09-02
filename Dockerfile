@@ -8,12 +8,12 @@ RUN add-apt-repository "deb https://packages.confluent.io/clients/deb $(lsb_rele
 RUN apt-get -y install librdkafka-dev
 
 COPY ./getkafkaversion.sh /psc/wrk/
-COPY ./generic.sh /psc/wrk/
+COPY ./consume.sh /psc/wrk/
 COPY ./producer.sh /psc/wrk/
 COPY ./code /psc/wrk/code
 
 RUN chmod 'o+rwx' /psc/wrk/getkafkaversion.sh
-RUN chmod 'o+rwx' /psc/wrk/generic.sh
 RUN chmod 'o+rwx' /psc/wrk/producer.sh
+RUN chmod 'o+rwx' /psc/wrk/consume.sh
 
 LABEL maintainer="cameron.wright@progress.com"

@@ -1,4 +1,4 @@
-FROM docker
+FROM eclipse-temurin:11.0.13_8-jdk-focal
 
 COPY ./java/consume.sh ./consume.sh
 COPY ./java/qa-kafka-client.jar ./qa-kafka-client.jar

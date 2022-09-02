@@ -13,12 +13,13 @@ block-level on error undo, throw.
     var JsonObject msgbody.
     
     define variable iCount as integer no-undo.
-    define variable kMsg        as character format "x(40)" label "Message" no-undo.
+    define variable kMsg   as character format "x(40)" label "Message" no-undo.
 
     pb = ProducerBuilder:Create("progress-kafka").
 
-    pb:SetProducerOption("bootstrap.servers", "localkafka:9092"). // Kafka reqires at least one bootstrap server host and port.
-    // pb:SetProducerOption("value.serializer", "OpenEdge.Messaging.StringSerializer").
+    // Kafka requires at least one bootstrap server host and port.
+    pb:SetProducerOption("bootstrap.servers", "localkafka:9092"). 
+    // use the JSON serializer. 
     pb:SetBodySerializer(new JsonSerializer()).
 
     producer = pb:Build().
