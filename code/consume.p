@@ -1,10 +1,4 @@
-/**
-    This example shows how to consume a stream of messages. The messages
-    themselves are JSON objects, and the example uses the JSONDeserializer
-    class to convert the network messages to JSON objects that can be used
-    by the application. 
-*/
-  
+
 block-level on error undo, throw.
  
 using OpenEdge.Messaging.ConsumerBuilder.
