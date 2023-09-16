@@ -1,9 +1,9 @@
-FROM openedge:12.5.2
+FROM ec2-54-80-142-101.compute-1.amazonaws.com:9443/openedge-4gl:12.8.0
 
 RUN apt-get -y update --fix-missing 
 RUN apt-get -y install wget gnupg software-properties-common
-RUN wget -qO - https://packages.confluent.io/deb/7.2/archive.key | apt-key add - 
-RUN add-apt-repository "deb [arch=amd64] https://packages.confluent.io/deb/7.2 stable main" 
+RUN wget -qO - https://packages.confluent.io/deb/7.5/archive.key | apt-key add -
+RUN add-apt-repository "deb [arch=amd64] https://packages.confluent.io/deb/7.5 stable main" 
 RUN add-apt-repository "deb https://packages.confluent.io/clients/deb $(lsb_release -cs) main" 
 RUN apt-get -y install librdkafka-dev
 
